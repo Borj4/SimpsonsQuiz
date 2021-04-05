@@ -1,0 +1,114 @@
+*{
+    padding:10px;
+}
+
+body{
+    display: flex;
+    background-color: lightskyblue;
+    background-image: url(../Data/sky.jpg);
+    background-size: cover;
+    flex-direction: column;
+}
+header{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-color:  rgb(255, 238, 0);
+    border-style: solid ;
+    border-radius: 20px;
+    color: aliceblue;
+    font-size: x-large;
+    font-family: 40px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    background-color: transparent;
+    justify-content: space-around;
+    border-color:  aliceblue;
+    border-style: solid ;
+    border-radius: 20px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    font-size: xx-large;
+    color:aliceblue;
+    align-self: center;
+    color:chocolate;
+}
+button{
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+    cursor: pointer;
+    border-color:  rgb(255, 238, 0);
+    border-style: solid ;
+    border-radius: 20px;
+    min-height: 15%;
+    justify-content: center;
+}
+
+button:hover{
+    -moz-box-shadow: 0px 0px 30px #ffffff;
+    -webkit-box-shadow: 0px 0px 30px #ffffff;
+    box-shadow: 0px 0px 30px #ffffff;
+}
+.verde{
+    background-color: rgb(97, 192, 2);
+}
+.rojo{
+    background-color: red;
+}
+div{
+    background-color: black;
+    border-radius: 20px;
+    margin: 5%;
+    transition: 1s;
+}
+img{
+    display: none;
+}
+.homerWalking{
+    height: 375px;
+    width: 375px;
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+button{
+    align-self: auto;
+    width: 40%;
+    height: 30%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+}
+@media screen and (min-width: 1366px) {
+
+button{
+    max-width: 507px;
+}
+
+}
+/* Edit Style */
+#question{
+    background-color: rgba(0, 0, 0, 0.178);
+    border-radius: 20px;
+    border-color: goldenrod;
+    margin: 5%;
+    transition: 1s;
+}
