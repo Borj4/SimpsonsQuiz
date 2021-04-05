@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="TheBridge">
+    <meta name="description" content="Plantilla simple HTML5">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id=body>
+    <header id="header">
+        <p>Los Simpsons Quiz</p>
+    </header>
+    <main id="main">
+        <a href="quiz.html">Empezar</a>
+        <a href="edit.html">Modificar preguntas</a>
+        <form method="POST" method="http://localhost:8000/logIn">
+            <label>Log In</label>
+            <input type="text" name="logEmail">
+            <label>Contraseña</label>
+            <input type="text" name="logPassword">   
+            <input type="submit" name="submit" value="Log In">         
+        </form>
+        <form method="POST" method="http://localhost:8000/signIn">
+            <label>Sign In</label>
+            <input type="text" name="signEmail">
+            <label>Contraseña</label>
+            <input type="text" name="signPassword"> 
+            <input type="submit" name="submit" value="Sign In">       
+        </form>
+    </main>
+</body>
+</html>
