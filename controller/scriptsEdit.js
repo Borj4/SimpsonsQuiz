@@ -50,10 +50,10 @@ eraseButton.setAttribute('id', 'del'); /////////////////////////////////////////
 header.appendChild(eraseButton);
 
 // Set fetched questions in memory.
-let preguntas = JSON.parse(localStorage.getItem("questions")) 
+let preguntas = JSON.parse(localStorage.getItem("questions"));
 // Fill selector.
 preguntas.map((value,index) => {
-  const option = document.createElement("option")
+  const option = document.createElement("option");
   select.appendChild(option);
   option.innerText = value.pregunta;
   option.value = index;

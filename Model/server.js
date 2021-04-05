@@ -46,39 +46,39 @@ function validatePass(password){
 
 // Log In ----------------------------------------------------------------------------------
 server.post('/logIn', async (req,res) => {
-    console.log(await User.findOne({email:req.body.email}));
+    console.log(await User.findOne({email:req.body.logEmail}));
     res.send("ojete");
-    if (await User.findOne({email:req.body.email}) === null) {
+    if (await User.findOne({email:req.body.logEmail}) === null) {
         res.send('Aquí no te conocemos. Vaya usted a registrarse parfavá')
     }
-    else (await User.findOne({email:req.body.email}) != null)
-        token = jwt.sign({email:req.body.email,password:req.body.password},process.env.TOKEN_SECRET, { expiresIn: '1200s' });
+    else (await User.findOne({email:req.body.logEmail}) != null)
+        token = jwt.sign({email:req.body.logEmail,loPassword:req.body.logPassword},process.env.TOKEN_SECRET, { expiresIn: '1200s' });
 
-        res.redirect('http://127.0.0.1:5500/view/edit.html')
+        res.send(window.location.href = "http://127.0.0.1:5500/view/edit.html")
 });
 
 
 // Sign In ----------------------------------------------------------------------------------
 server.post('/signIn', async (req,res) => {
 
-if (validateEmail(req.body.email)===false)
+if (validateEmail(req.body.signEmail)===false)
 {res.send('Por favor, introduce un e-mail de verdad')}
 
-else if (validatePass(req.body.password)===false)
+else if (validatePass(req.body.signPassword)===false)
 {res.send('Tu contraseña debe contener al menos 8 caracteres, una minúscula y una mayúscula')}
 
-else if (await User.findOne({email:req.body.email}) != null)
+else if (await User.findOne({email:req.body.signEmail}) != null)
 {res.send('Ya estás registrado, por favor, dirígete a /logIn')}
 
 else  {  const newUser = new User ({
-        email: req.body.email,
-        password: md5(req.body.password),
+        email: req.body.signEmail,
+        password: md5(req.body.signPassword),
         private: false
         })
         newUser.save();
-        if (await User.findOne({email:req.body.email}) != null){
+        if (await User.findOne({email:req.body.signEmail}) != null){
             res.send("Ha habido un problema jodido, prueba más tarde");}
-        else(await User.findOne({email:req.body.email}) === null)
+        else(await User.findOne({email:req.body.signPassword}) === null)
             res.send("Estás registradísismo");
         
 }})
